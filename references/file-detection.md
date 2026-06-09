@@ -88,6 +88,17 @@ UK 商学院的资料文件名极其混乱。同一份 module handbook 可能叫
 - Past paper 必须全文读完（题目可能分散在不同页），不可跳页
 - Lecture slide 前 10 页 + 最后 2 页通常足以提取 topic 列表和 learning objectives
 
+**PDF 文字提取优先路径（3 步 fallback）：**
+1. **先试 `pdftotext`**：`pdftotext -layout <file.pdf> -` → 如果返回有效文本，直接用（最干净）
+   - 批量处理：`for f in *.pdf; do pdftotext -layout "$f" "${f%.pdf}.txt"; done`
+   - ⚠️ `pdftotext not found` ≠ `pdftoppm not found`，这是两个不同工具，别搞混
+2. **Read 工具**：如果 pdftotext 不可用或返回空/乱码 → 用 Read 工具读取（大多数扫描件有 OCR 文本层）
+3. **提示用户**：如果 Read 也失败 → "这份文件我无法读取文字。请手动输入题目，或者截图发给我。"
+
+**题目含内嵌图形时：**
+- 如果题目包含图表/图形但 OCR 抓不到 → 告诉用户："这题里的图我看不到，方法论我先讲，**请你截图发我**，我对照真实图重答精确版本。"
+- 不要在没有图的情况下猜测图形内容
+
 ---
 
 ## Phase 0 标准扫描流程
@@ -124,9 +135,10 @@ UK 商学院的资料文件名极其混乱。同一份 module handbook 可能叫
 | `CLAUDE.md` | Daily | Cram | `discipline`, `assessment`, `exam format`, `学习模式` |
 | `topics.md` | Daily | Cram | `Week`, `Topic`, `Lecture file`, `Tutorial`, `Status` |
 | `glossary.md` | Daily | Cram | `English Term`, `中文理解`, `First seen`, `关键句` |
-| `progress.md` | Daily | Cram | `Week`, checkbox items, `Sticky points`, `🔄 跨会话待办` |
+| `progress.md` | Daily | Cram | `Week`, checkbox items, `✅已掌握`, `🟡仍混淆`, `🔴易丢分`, `🔮待预测`, `🔄 跨会话待办` |
 | `hotmap.md` | Cram | Cram | `Rank`, `Topic`, `Lecture`, `出现次数`, `主要题型`, `累计分值占比`, `热度(🔴🟠🟡🟢)` |
 | `answer-templates.md` | Cram | Cram | 按题型分段的填空式模板 |
-| `cheatsheet.md` | Cram | Cram | Markdown 表格，每行一个 Top topic |
+| `cross-paper-summary.md` | Cram | Cram | 跨卷对照表（topic × 年份），压缩到40-50% |
+| `cheatsheet.md` | Cram | Cram | 1页A4极简版，每行一个 Top topic |
 
 **Cram 读取 Daily 数据时**：如果 `.study/CLAUDE.md` 已存在，跳过 Step 1-2，直接用已有 `discipline` 和 `topics` 数据建热力图。
