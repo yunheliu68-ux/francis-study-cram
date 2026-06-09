@@ -124,7 +124,7 @@ UK 商学院的资料文件名极其混乱。同一份 module handbook 可能叫
 | `CLAUDE.md` | Daily | Cram | `discipline`, `assessment`, `exam format`, `学习模式` |
 | `topics.md` | Daily | Cram | `Week`, `Topic`, `Lecture file`, `Tutorial`, `Status` |
 | `glossary.md` | Daily | Cram | `English Term`, `中文理解`, `First seen`, `关键句` |
-| `progress.md` | Daily | Cram | `Week`, checkbox items, `Sticky points` |
+| `progress.md` | Daily | Cram | `Week`, checkbox items, `Sticky points`, `🔄 跨会话待办` |
 | `hotmap.md` | Cram | Cram | `Rank`, `Topic`, `Lecture`, `出现次数`, `主要题型`, `累计分值占比`, `热度(🔴🟠🟡🟢)` |
 | `answer-templates.md` | Cram | Cram | 按题型分段的填空式模板 |
 | `cheatsheet.md` | Cram | Cram | Markdown 表格，每行一个 Top topic |
