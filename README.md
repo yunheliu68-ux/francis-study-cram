@@ -6,8 +6,14 @@
 
 ### 方式一：HTTPS（推荐，无需任何配置）
 
+**第一步**：在 Claude Code 中输入（回车执行）：
 ```
 /plugin marketplace add https://github.com/yunheliu68-ux/francis-study-cram.git
+```
+等待提示成功后，再输入第二步。
+
+**第二步**：
+```
 /plugin install francis-study-cram@francis-study-cram
 ```
 
@@ -16,11 +22,18 @@
 先在终端运行一次（加入 GitHub SSH 指纹，只需一次）：
 ```bash
 ssh-keyscan github.com >> ~/.ssh/known_hosts
+ssh -T git@github.com
 ```
 
-然后在 Claude Code 中输入：
+然后在 Claude Code 中分两步输入：
+
+**第一步**：
 ```
 /plugin marketplace add yunheliu68-ux/francis-study-cram
+```
+
+**第二步**：
+```
 /plugin install francis-study-cram@francis-study-cram
 ```
 
