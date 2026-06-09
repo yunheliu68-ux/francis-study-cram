@@ -1,4 +1,4 @@
-# francis-study-cram —— UK 本硕通用学习助教
+# francis-study-cram —— UK 通用学习助教
 
 一个 Claude Code skill 插件，**跨多门课通用**（不绑定单一学科），专为 UK 本硕场景设计：
 日常学习 + 考前冲刺双模式，自动识别学科子类，按英文考试 marking rubric 输出。
