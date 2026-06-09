@@ -39,6 +39,34 @@ ssh -T git@github.com
 
 ---
 
+## 课件读取：让 Claude Code 看到你的学习资料
+
+**Claude Code 运行在你本地电脑上，可以直接读取你电脑上的任何文件。**
+
+### 方式一：在课件文件夹里启动 Claude Code（推荐）
+
+```bash
+cd ~/Desktop/ECO212          # 进入你的课件文件夹
+claude                       # 启动 Claude Code
+/study-cram                  # 启动冲刺模式
+```
+
+### 方式二：启动后告诉 Claude Code 路径
+
+```bash
+claude                       # 启动 Claude Code
+/study-cram                  # 启动冲刺模式
+```
+
+然后直接说：
+```
+我的课件在 ~/Desktop/ECO212，帮我读一下
+```
+
+Claude Code 会自动读取该文件夹下的所有课件（PDF、Word、PPTX）。
+
+---
+
 装完后：
 - 输入 `/study-daily` → 日常学习模式
 - 输入 `/study-cram` → 考前冲刺模式
