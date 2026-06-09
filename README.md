@@ -5,7 +5,7 @@
 打开终端 → 启动 Claude Code → 输入这两行：
 
 ```bash
-/plugin marketplace add yunheliu68-ux/francis-study-cram
+/plugin marketplace add https://github.com/yunheliu68-ux/francis-study-cram
 /plugin install francis-study-cram@francis-study-cram
 ```
 
@@ -53,7 +53,7 @@ UK 商学院的学习有几个独特痛点：
 打开终端 → 启动 Claude Code → 输入这两行，装完即用：
 
 ```bash
-/plugin marketplace add yunheliu68-ux/francis-study-cram
+/plugin marketplace add https://github.com/yunheliu68-ux/francis-study-cram
 /plugin install francis-study-cram@francis-study-cram
 ```
 
