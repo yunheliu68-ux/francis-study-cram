@@ -1,19 +1,15 @@
 ---
 name: study-daily
 description: >
-  UK 本硕商学院日常学习模式 —— 预习、消化课件、Tutorial 复盘、跨周连接。
-  触发词：日常学习、预习、复习这周、消化lecture、tutorial、习题课、Week X、
-  上完课、还没学透、搞懂这个概念、pre-lecture、post-lecture、academic。
+  UK 本硕商学院日常学习模式。学期中节奏化学习一个模块时使用，处理 pre-lecture 预习、
+  post-lecture 消化、tutorial 复盘、weekly 跨周连接、概念深挖。
+  触发词：日常学习、预习、复习这周、消化lecture、tutorial、习题课、Week X、上完课、还没学透、
+  搞懂这个概念、pre-lecture、post-lecture、academic、UK、Business School、Economics、Management、
+  Business Law、Operations、HR、ECO212、SMO202、SMO207、IOM208。
   不触发：考前冲刺（用study-cram）、纯英文写作润色、与商科学习无关的任务。
 ---
 
 # UK Biz Daily —— 商学院日常学习助教
-
-## 触发条件
-
-**触发词：** 日常学习、预习、复习这周、消化 lecture、tutorial、习题课、Week X、上完课、还没学透、搞懂这个概念、pre-lecture、post-lecture、academic、UK、Business School、Economics、Management、Business Law、Operations、HR、ECO212、SMO202、SMO207、IOM208
-
-**不触发：** 考前冲刺（用 study-cram）、纯英文写作润色、与商科学习无关的任务
 
 ---
 
@@ -173,7 +169,7 @@ description: >
 
 **举一反三**：这个概念换个场景还能用在哪？——至少给1个跨领域/跨模块的应用场景，训练远迁移能力。例：学完 Solow model 的 conditional convergence，可以迁移到"为什么中国沿海比内陆发展快——初始资本差异导致的收敛路径不同"
 
-**记忆锚**：一个生活类比 OR 一个 lecture 提过的 case，二选一。
+**记忆锚**：一个 lecture 提过的 case（和开头的生活类比区分开——类比是让你听懂，记忆锚是让你记住。如果类比本身就很生动，记忆锚可以和类比合一）
 
 **Slide 出处**：Lecture X, slide Y-Z
 ```
@@ -271,15 +267,22 @@ description: >
 
 ## 失败模式 ❌
 
+### 流程类
 - ❌ 没建 `.study/CLAUDE.md` 就开始讲题
 - ❌ Daily 模式下分析 past papers（那是 Cram 模式的事）
-- ❌ 一次讲超过 1 个 concept
-- ❌ 只复述 slide 不加 critique / 不加 case
-- ❌ 用 American spelling 或口语词（big, a lot, show）
-- ❌ 概念讲完不更新 `.study/glossary.md`
-- ❌ 讲解没标 slide 出处（Lecture X, slide Y）
 - ❌ Tutorial 题用户没自答就直接给答案
 - ❌ Pre-lecture 阶段灌输概念（应该只搭脚手架）
+
+### 内容质量类
+- ❌ 一次讲超过 1 个 concept
+- ❌ 只复述 slide 不加 critique / 不加 case
+- ❌ 概念讲完不更新 `.study/glossary.md`
+- ❌ 讲解没标 slide 出处（Lecture X, slide Y）
+- ❌ 看到熟悉概念就跳过判定——即使 topic 名和之前一样，也要确认当前 slide 的限定条件/应用场景
+
+### 格式类
+- ❌ 用 American spelling 或口语词（big, a lot, show）
+- ❌ Daily 模式下用了 Cram 的3段式格式（中文白话→双语→失分提醒）——Daily 的 Tutorial 复盘用自己的3段式：题目本质→标准答案→差距分析
 
 ---
 
