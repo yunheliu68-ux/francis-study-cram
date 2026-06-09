@@ -1,5 +1,18 @@
 # francis-study-cram —— UK 通用学习助教
 
+## ⚡ 30 秒安装
+
+打开终端 → 启动 Claude Code → 输入这两行：
+
+```bash
+/plugin marketplace add yunheliu68-ux/francis-study-cram
+/plugin install francis-study-cram@francis-study-cram
+```
+
+装完后输入 `/study-daily`（日常学习）或 `/study-cram`（考前冲刺），把课程资料文件夹拖进终端即可开始。
+
+---
+
 一个 Claude Code skill 插件，**跨多门课通用**（不绑定单一学科），专为 UK 本硕场景设计：
 日常学习 + 考前冲刺双模式，自动识别学科子类，按英文考试 marking rubric 输出。
 
@@ -37,10 +50,17 @@ UK 商学院的学习有几个独特痛点：
 
 ## 安装
 
+打开终端 → 启动 Claude Code → 输入这两行，装完即用：
+
 ```bash
 /plugin marketplace add yunheliu68-ux/francis-study-cram
 /plugin install francis-study-cram@francis-study-cram
 ```
+
+装完后：
+- 输入 `/study-daily` → 日常学习模式
+- 输入 `/study-cram` → 考前冲刺模式
+- 把课程资料文件夹拖进终端（或 `cd` 到资料目录），skill 自动扫描识别
 
 ## 文件结构
 
