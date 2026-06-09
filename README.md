@@ -2,14 +2,34 @@
 
 ## ⚡ 30 秒安装
 
-打开终端 → 启动 Claude Code → 输入这两行：
+打开终端 → 输入 `claude` 启动 Claude Code → 输入安装命令。
 
+### 方式一：HTTPS（推荐，无需任何配置）
+
+```
+/plugin marketplace add https://github.com/yunheliu68-ux/francis-study-cram.git
+/plugin install francis-study-cram@francis-study-cram
+```
+
+### 方式二：SSH（需要提前信任 GitHub 指纹）
+
+先在终端运行一次（加入 GitHub SSH 指纹，只需一次）：
 ```bash
+ssh-keyscan github.com >> ~/.ssh/known_hosts
+```
+
+然后在 Claude Code 中输入：
+```
 /plugin marketplace add yunheliu68-ux/francis-study-cram
 /plugin install francis-study-cram@francis-study-cram
 ```
 
-装完后输入 `/study-daily`（日常学习）或 `/study-cram`（考前冲刺），把课程资料文件夹拖进终端即可开始。
+---
+
+装完后：
+- 输入 `/study-daily` → 日常学习模式
+- 输入 `/study-cram` → 考前冲刺模式
+- 把课程资料文件夹拖进终端（或 `cd` 到资料目录），skill 自动扫描识别
 
 ---
 
@@ -48,21 +68,6 @@ UK 商学院的学习有几个独特痛点：
 > 同一门课可能命中两个子类（例：IOM208 = Management + Quant），skill 会自动叠加模板。
 > 加新学科只需在 `references/discipline-templates.md` 里加一段，不需要新建 skill。
 
-## 安装
-
-打开终端 → 启动 Claude Code → 输入这两行，装完即用：
-
-```bash
-/plugin marketplace add yunheliu68-ux/francis-study-cram
-/plugin install francis-study-cram@francis-study-cram
-```
-
-装完后：
-- 输入 `/study-daily` → 日常学习模式
-- 输入 `/study-cram` → 考前冲刺模式
-- 把课程资料文件夹拖进终端（或 `cd` 到资料目录），skill 自动扫描识别
-
-## 文件结构
 
 ```
 francis-study-cram/
