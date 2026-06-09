@@ -108,7 +108,7 @@ UK 商学院的资料文件名极其混乱。同一份 module handbook 可能叫
    - .study/topics.md      ← Week × Topic 映射表
    - .study/hotmap.md      ← 考点热力图（仅 Cram 模式自动生成）
    - .study/glossary.md    ← 关键术语英中对照（边学边累积）
-   - .study/progress.md    ← 学习进度（仅 Daily 模式）
+   - .study/progress.md    ← 学习进度（Daily 创建，Cram 也会读写）
 ```
 
 **输出文件夹用 `.study/` 而不是 `study/`** —— 隐藏文件夹避免污染用户资料目录。
