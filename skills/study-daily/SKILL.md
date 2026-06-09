@@ -1,6 +1,10 @@
 ---
 name: study-daily
-description: UK 本硕商学院日常学习模式 —— 预习、消化课件、Tutorial 复盘、跨周连接。
+description: >
+  UK 本硕商学院日常学习模式 —— 预习、消化课件、Tutorial 复盘、跨周连接。
+  触发词：日常学习、预习、复习这周、消化lecture、tutorial、习题课、Week X、
+  上完课、还没学透、搞懂这个概念、pre-lecture、post-lecture、academic。
+  不触发：考前冲刺（用study-cram）、纯英文写作润色、与商科学习无关的任务。
 ---
 
 # UK Biz Daily —— 商学院日常学习助教
