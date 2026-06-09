@@ -1,6 +1,10 @@
-# UK Biz Study —— UK 本硕商科学习助教
+# francis-study-cram —— UK 本硕通用学习助教
 
-专为 UK 本硕商学院学习场景设计的 Claude Code skill 插件。
+一个 Claude Code skill 插件，**跨多门课通用**（不绑定单一学科），专为 UK 本硕场景设计：
+日常学习 + 考前冲刺双模式，自动识别学科子类，按英文考试 marking rubric 输出。
+
+初始 4 门测试模块覆盖：经济学（ECO212）/ 商业法（SMO207）/ HR 管理（SMO202）/ 量化运营（IOM208），
+但同一套架构适用于任何 UK 论述题 / 案例题 / 计算题为主的本硕模块。
 
 ## 解决什么问题
 
@@ -19,14 +23,17 @@ UK 商学院的学习有几个独特痛点：
 | **Daily**（日常学习） | "今天有 Lecture 5"、"我要预习 Week 3"、"刚上完课，帮我消化一下" | Pre-lecture preview / Post-lecture digest / Tutorial 复盘 / Weekly connector |
 | **Cram**（考前冲刺） | "还剩 3 天考试"、"临时抱佛脚"、"帮我把这门课扫一遍" | 时间预算 + 考点热力图 + 高密度复习路线 + 答题模板 + 速查表 |
 
-## 四类商科子模板（自动识别）
+## 四类学科子模板（按内容自动识别）
 
-| 子类 | 典型模块 | 输出格式 |
-|---|---|---|
-| Econ（经济学） | ECO212 Development Economics | 模型 + 图 + 直觉解释 + critical evaluation |
-| Law-flavoured（商业法） | SMO207 Business & Employment Law | IRAC-lite（Issue / Rule / Application / Conclusion） |
-| Management（管理理论） | SMO202 HR / Performance Management | Framework 名 + 出处 + 应用 + critique |
-| Quant（量化运营） | IOM208 Operations + SPSS | 数据 / 方法 / 结果 / interpretation |
+| 子类 | 触发关键词 | 典型模块（示例，不限于） | 输出格式 |
+|---|---|---|---|
+| Econ | supply / demand / GDP / growth model | ECO212 Development Economics、Macro/Micro | 模型 + 图 + 直觉 + critical evaluation |
+| Law-flavoured | claimant / statute / case law / tort | SMO207 Business Law、Employment Law | IRAC（Issue / Rule / Application / Conclusion） |
+| Management | motivation / leadership / HRM / JCM | SMO202 HR / Performance Management、OB | Framework 名 + 作者 + critique + case |
+| Quant | regression / SPSS / p-value / forecasting | IOM208 Operations + SPSS、量化方法 | Given / Method / Result / Interpretation |
+
+> 同一门课可能命中两个子类（例：IOM208 = Management + Quant），skill 会自动叠加模板。
+> 加新学科只需在 `references/discipline-templates.md` 里加一段，不需要新建 skill。
 
 ## 安装
 

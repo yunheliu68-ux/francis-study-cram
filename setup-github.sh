@@ -1,32 +1,52 @@
 #!/bin/bash
-# 一键推到 GitHub。运行前请确认：
+# 一键推到 GitHub。我已经在本地建好 git 仓库并完成首次提交，
+# 这个脚本只做一件事：在 GitHub 上建 public repo + push。
+#
+# 运行前请确认：
 # 1. 已安装 gh CLI（macOS：brew install gh）
-# 2. 已登录 gh（gh auth login）
+# 2. 已登录 gh（gh auth login，浏览器一次授权终身有效）
 #
 # 用法：在 Terminal 里
 #   cd "/Users/francis/Desktop/ECO212复习/francis-study-cram"
 #   bash setup-github.sh
+#
+# 如果你把文件夹搬到别处了（推荐），先 cd 进新位置再运行。
 
 set -e
 
 cd "$(dirname "$0")"
 
-echo "==> 初始化 git 仓库..."
-git init -b main
+# 清理 Claude 在 sandbox 里残留的 git 锁文件（无害）
+rm -f .git/index.lock .git/HEAD.lock .git/objects/maintenance.lock 2>/dev/null || true
 
-echo "==> 添加文件..."
-git add .
+# 如果不是 git 仓库（极少见，比如你 clone 走了又删了），重新初始化
+if [ ! -d .git ]; then
+  echo "==> 没检测到 .git，初始化..."
+  git init -b main
+  git add .
+  git commit -m "Initial commit: francis-study-cram skill plugin"
+fi
 
-echo "==> 首次提交..."
-git commit -m "Initial commit: UK Biz Study skill plugin (daily + cram modes)"
+# 如果有未提交的改动，自动提交
+if [ -n "$(git status --porcelain)" ]; then
+  echo "==> 检测到未提交改动，自动提交..."
+  git add -A
+  git commit -m "Update plugin content"
+fi
 
-echo "==> 在 GitHub 创建 public repo francis-study-cram 并推送..."
-gh repo create francis-study-cram \
-  --public \
-  --source=. \
-  --push \
-  --description "UK 本硕商学院 AI 学习助教：日常学习 + 考前冲刺双模式"
+# 如果已经有 origin remote，直接 push；否则建 repo
+if git remote get-url origin > /dev/null 2>&1; then
+  echo "==> 已配置 remote，直接 push..."
+  git push -u origin main
+else
+  echo "==> 在 GitHub 创建 public repo francis-study-cram 并推送..."
+  gh repo create francis-study-cram \
+    --public \
+    --source=. \
+    --push \
+    --description "AI 学习助教：日常学习 + 考前冲刺双模式，专为全英文授课、考论述题的大学生设计"
+fi
 
 echo ""
 echo "✅ 完成！repo 地址："
-gh repo view francis-study-cram --web --json url -q .url 2>/dev/null || gh repo view --json url -q .url
+gh repo view francis-study-cram --json url -q .url
