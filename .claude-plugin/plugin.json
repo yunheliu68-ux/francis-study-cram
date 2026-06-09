@@ -3,7 +3,11 @@
   "version": "0.2.0",
   "description": "UK Business School 学习助教（日常 + 抱佛脚双模式）",
   "author": {
-    "name": "Francis Liu"
+    "name": "Francis Liu",
+    "url": "https://github.com/yunheliu68-ux"
   },
-  "license": "MIT"
+  "homepage": "https://github.com/yunheliu68-ux/francis-study-cram",
+  "repository": "https://github.com/yunheliu68-ux/francis-study-cram",
+  "license": "MIT",
+  "keywords": ["exam", "cram", "study", "education", "uk", "business-school", "考试", "复习", "备考", "冲刺"]
 }
