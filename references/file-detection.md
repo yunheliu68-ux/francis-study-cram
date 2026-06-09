@@ -36,7 +36,7 @@ UK 商学院的资料文件名极其混乱。同一份 module handbook 可能叫
 - 文件名含 "Week 12" / "Week 13" 且在 lecture 文件夹（学期末复习课）
 - 内容是对整学期 topic 的浓缩 + "exam tips" / "重点"
 
-**为什么重要：** 老师亲口划重点。**Cram 模式权重 ×3，Daily 模式不优先看（避免提前剧透）**。
+**为什么重要：** 老师亲口划重点。**Cram 模式权重 ×3（热力图中 revision lecture 提及的 topic 分值 ×3 计入累计分值占比）**，Daily 模式不优先看（避免提前剧透）。
 
 ### 4. Tutorial / Seminar / Lab（练习材料）
 
@@ -92,3 +92,21 @@ UK 商学院的资料文件名极其混乱。同一份 module handbook 可能叫
 ```
 
 **输出文件夹用 `.study/` 而不是 `study/`** —— 隐藏文件夹避免污染用户资料目录。
+
+---
+
+## `.study/` 共享数据格式约定（Daily 与 Cram 共用）
+
+两个 skill 共享 `.study/` 文件夹，以下是每个文件的字段约定，确保 Daily 建档后 Cram 能无缝读取：
+
+| 文件 | 创建者 | 读取者 | 关键字段 |
+|---|---|---|---|
+| `CLAUDE.md` | Daily | Cram | `discipline`, `assessment`, `exam format`, `学习模式` |
+| `topics.md` | Daily | Cram | `Week`, `Topic`, `Lecture file`, `Tutorial`, `Status` |
+| `glossary.md` | Daily | Cram | `English Term`, `中文理解`, `First seen`, `关键句` |
+| `progress.md` | Daily | Cram | `Week`, checkbox items, `Sticky points` |
+| `hotmap.md` | Cram | Cram | `Rank`, `Topic`, `Lecture`, `出现次数`, `主要题型`, `累计分值占比` |
+| `answer-templates.md` | Cram | Cram | 按题型分段的填空式模板 |
+| `cheatsheet.md` | Cram | Cram | Markdown 表格，每行一个 Top topic |
+
+**Cram 读取 Daily 数据时**：如果 `.study/CLAUDE.md` 已存在，跳过 Step 1-2，直接用已有 `discipline` 和 `topics` 数据建热力图。

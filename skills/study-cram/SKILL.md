@@ -1,13 +1,15 @@
 ---
 name: study-cram
-description: >
-  UK 本硕商学院考前冲刺模式。考试在即（剩 1-14 天）抱佛脚式高密度复习时使用。
-  自动建考点热力图、按高频考点排复习路线、刷往年题、生成答题模板和速查表。
-  触发词：考前、临时抱佛脚、冲刺、还剩 X 天、明天考、Final、Resit、押题、考点、
-  past paper、往年题、突击、快速过一遍、复习全部、ECO212、SMO202、SMO207、IOM208 +
-  时间紧迫信号。
-  不触发：学期中的日常学习（用 study-daily）、单纯讲一个概念。
+description: UK 本硕商学院考前冲刺模式 —— 热力图驱动的高密度复习，答题模板 + 速查表。
 ---
+
+# UK Biz Cram —— 商学院抱佛脚冲刺
+
+## 触发条件
+
+**触发词：** 考前、临时抱佛脚、冲刺、还剩 X 天、明天考、Final、Resit、押题、考点、past paper、往年题、突击、快速过一遍、复习全部、ECO212、SMO202、SMO207、IOM208 + 时间紧迫信号
+
+**不触发：** 学期中的日常学习（用 study-daily）、单纯讲一个概念
 
 # UK Biz Cram —— 商学院抱佛脚冲刺
 
@@ -34,7 +36,7 @@ description: >
 
 ### Step 1：扫资料 + 识别（同 Daily）
 
-读 `references/file-detection.md`，按内容驱动分类。**Cram 模式下 revision lecture 权重 ×3**，past papers 全部读。
+读 `references/file-detection.md`，按内容驱动分类。**Cram 模式下 revision lecture 权重 ×3（热力图中 revision lecture 提及的 topic 分值 ×3 计入累计分值占比）**，past papers 全部读。
 
 ### Step 2：识别学科子类
 
@@ -45,6 +47,8 @@ description: >
 这是**整个 Cram 模式最有价值的产物**。流程：
 
 1. 读每一份 past paper，**逐题做以下提取**：
+
+   > ⚠️ 如果 past paper 是扫描 PDF 无法提取文字，提示用户："这份 past paper 似乎是扫描件，我无法读取。请手动输入题目，或者提供文字版 PDF。"
    ```
    Year 2024-2025 Final
    Q1 (a) - Topic: <Poverty> / Lecture: <5> / 题型: <calculation+essay> / 分值: <20>
@@ -176,8 +180,8 @@ Variant 2: "Using framework Z, analyse case W"
 
 #### 支线 4：速查表（考前一晚）
 
-生成 `.study/cheatsheet.md`：
-- 1 页篇幅
+生成 `.study/cheatsheet.md`（Markdown 格式）：
+- 1 页篇幅（约 400 字，Markdown 表格）
 - 每个 Top topic 一行：name | key equation/framework | one-line critique | signature case
 - 进考场前 10 分钟看一眼用
 

@@ -1,25 +1,29 @@
 ---
 name: study-daily
-description: >
-  UK 本硕商学院日常学习模式。学期中节奏化学习一个模块时使用，处理 pre-lecture 预习、
-  post-lecture 消化、tutorial 复盘、weekly 跨周连接、概念深挖。
-  触发词：日常学习、预习、复习这周、消化 lecture、tutorial、习题课、Week X、上完课、还没学透、
-  搞懂这个概念、pre-lecture、post-lecture、academic、UK、Business School、Economics、Management、
-  Business Law、Operations、HR、ECO212、SMO202、SMO207、IOM208。
-  不触发：考前冲刺（用 study-cram）、纯英文写作润色、与商科学习无关的任务。
+description: UK 本硕商学院日常学习模式 —— 预习、消化课件、Tutorial 复盘、跨周连接。
 ---
 
 # UK Biz Daily —— 商学院日常学习助教
 
+## 触发条件
+
+**触发词：** 日常学习、预习、复习这周、消化 lecture、tutorial、习题课、Week X、上完课、还没学透、搞懂这个概念、pre-lecture、post-lecture、academic、UK、Business School、Economics、Management、Business Law、Operations、HR、ECO212、SMO202、SMO207、IOM208
+
+**不触发：** 考前冲刺（用 study-cram）、纯英文写作润色、与商科学习无关的任务
+
+---
+
 ## 用前必读：找资料文件夹
 
 用户在某个具体 module 文件夹里使用这个 skill。**第一步永远是确认在哪个模块**，例如：
-- `/Users/francis/Desktop/ECO212复习/ECO212/`
-- `/Users/francis/Desktop/SMO207复习/smo207/`
-- `/Users/francis/Desktop/SMO202复习/smo202/`
-- `/Users/francis/Desktop/IOM208复习/iom208/`
+- `ECO212/`（Development Economics）
+- `SMO207/`（Business Law）
+- `SMO202/`（HR Management）
+- `IOM208/`（Quantitative Operations）
 
-如果用户没说，直接问："你今天学的是哪个模块？"——**不要瞎猜**。
+> 路径格式：`${MODULE_DIR}/`，由用户提供或从上下文推断。**不硬编码绝对路径**。
+
+如果用户没说，直接问："你今天学的是哪个模块？文件夹在哪？"——**不要瞎猜**。
 
 ---
 
@@ -66,11 +70,12 @@ description: >
    | 5 | Poverty | Leture 5 Poverty.pdf | Week 5 Worksheet | 待消化 |
    ```
 
-3. **`.study/glossary.md`** —— 术语英中对照（边学边累积，初始为空）
+3. **`.study/glossary.md`** —— 术语英中对照（自动累积，初始为空）
    ```markdown
    | English Term | 中文理解 | First seen | 关键句 |
    |---|---|---|---|
    ```
+   **更新规则：** 每次 Post-lecture Digest 讲完一个 concept 后，**自动**将新术语追加到 glossary。用户无需手动触发。
 
 4. **`.study/progress.md`** —— 学习进度
    ```markdown

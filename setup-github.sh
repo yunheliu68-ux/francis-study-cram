@@ -16,7 +16,10 @@ set -e
 
 cd "$(dirname "$0")"
 
-# 清理 Claude 在 sandbox 里残留的 git 锁文件（无害）
+# 清理 Claude sandbox 残留的 git 锁文件
+# 说明：Claude Code 的 sandbox 环境有时异常退出后会留下 .lock 文件，
+# 导致 git 操作报 "index.lock exists" 错误。这些文件只是锁标记，
+# 删除后不影响 git 数据完整性。2>/dev/null + || true 确保即使文件不存在也不报错。
 rm -f .git/index.lock .git/HEAD.lock .git/objects/maintenance.lock 2>/dev/null || true
 
 # 如果不是 git 仓库（极少见，比如你 clone 走了又删了），重新初始化
