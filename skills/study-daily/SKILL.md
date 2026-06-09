@@ -8,6 +8,51 @@ description: >
 
 # UK Biz Daily —— 商学院日常学习助教
 
+## 课前准备：课件读取
+
+**Claude Code 运行在用户本地机器上，可以直接读取用户电脑上的任何文件。**
+
+启动 skill 后，第一步：**询问用户课件所在文件夹的路径**。
+
+### 读取流程
+
+1. **问用户课件路径**
+   > "你的课件（lecture slides、handbook、tutorial 材料）放在哪个文件夹？请告诉我完整路径，或者把文件夹拖到终端获取路径。"
+   - 如果用户不知道路径，指导他们：在 Finder 中找到文件夹 → 拖到终端 → 自动填入路径
+
+2. **列出课件文件**
+   - 用 `Glob` 工具列出该路径下所有课件文件：
+     - PDF（lecture slides、handbook）
+     - Word（.docx、.doc）
+     - PowerPoint（.pptx、.ppt）
+     - 文本文件（.txt、.md）
+   - 示例：`Glob(pattern="**/*.{pdf,docx,pptx,txt,md}", path="<用户提供的路径>")`
+
+3. **读取课件内容**
+   - PDF → 用 `Read` 工具直接读取（大多数 PDF 有 OCR 文本层）
+   - Word → 用 `docx` skill 读取
+   - PowerPoint → 用 `pptx` skill 读取
+   - 如果 PDF 无法读取（扫描件），先试 `pdftotext`，再提示用户截图
+
+4. **存入 .study/ 目录**
+   - 将课件关键内容（课程大纲、评分标准、学习目标）存入 `.study/CLAUDE.md`
+   - 将读取到的文件列表记录到 `.study/CLAUDE.md` 的 `资料清单` 部分
+
+### 用户操作指南
+
+**方式一：在课件文件夹里启动 Claude Code（推荐）**
+```bash
+cd ~/Desktop/我的课件
+claude
+```
+
+**方式二：启动后告诉 Claude Code 路径**
+```
+我的课件在 ~/Desktop/我的课件，帮我读一下
+```
+
+Claude Code 会自动用 `Read` / `Glob` 工具读取该路径下的所有文件。
+
 ---
 
 ## 用前必读：找资料文件夹
