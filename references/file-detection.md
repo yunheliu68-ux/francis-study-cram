@@ -95,6 +95,8 @@ UK 商学院的资料文件名极其混乱。同一份 module handbook 可能叫
 ```
 1. 列出根文件夹的所有文件 + 子文件夹
 2. 对每个文件：读前 2-3 页（PDF）或前 200 行（docx/txt），判断类型
+   ↑ 这是"类型识别"阶段，只为了判断文件属于 handbook/lecture/tutorial/past paper/revision 哪一类
+   ↑ 大文件的完整读取策略见上方"PDF 大文件分批读取策略"
 3. 按类型分桶：
    - handbook/ → 优先解析，提取评估方式 + topic 列表
    - lectures/ → 按 Week 编号排序，提取每周 topic
