@@ -137,7 +137,7 @@ UK 商学院的资料文件名极其混乱。同一份 module handbook 可能叫
 | `glossary.md` | Daily | Cram | `English Term`, `中文理解`, `First seen`, `关键句` |
 | `progress.md` | Daily | Cram | `Week`, checkbox items, `✅已掌握`, `🟡仍混淆`, `🔴易丢分`, `🔮待预测`, `🔄 跨会话待办` |
 | `hotmap.md` | Cram | Cram | `Rank`, `Topic`, `Lecture`, `出现次数`, `主要题型`, `累计分值占比`, `热度(🔴🟠🟡🟢)` |
-| `answer-templates.md` | Cram | Cram | 按题型分段的填空式模板 |
+| `answer-templates.md` | Cram | Cram | 按题型分段的填空式模板，含🔑关键金句和📌必带例子 |
 | `cross-paper-summary.md` | Cram | Cram | 跨卷对照表（topic × 年份），压缩到40-50% |
 | `cheatsheet.md` | Cram | Cram | 1页A4极简版，每行一个 Top topic |
 
