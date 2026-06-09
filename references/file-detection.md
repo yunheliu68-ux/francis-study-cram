@@ -72,6 +72,24 @@ UK 商学院的资料文件名极其混乱。同一份 module handbook 可能叫
 
 ---
 
+## PDF 大文件分批读取策略
+
+扫描阶段遇到大型 PDF 时，按以下策略分批读取，避免一次性吞入导致截断或超时：
+
+| PDF 页数 | 策略 | 说明 |
+|---|---|---|
+| **≤ 10 页** | 直接全文读取 | 小文件无需分批 |
+| **11-50 页** | 每批 20 页 | 分 2-3 批读完，每批记录提取到的类型信号 |
+| **> 50 页** | 先读前 5 页 + 目录页 + 最后 3 页 | 超长文件（如完整 textbook）先定位结构，再按需深读相关章节 |
+
+**执行规则：**
+- 每批读取后立即判断文件类型（handbook / lecture / tutorial / past paper / revision），不要等全部读完再判断
+- 如果前 2 批已能确定类型，可跳过剩余批次
+- Past paper 必须全文读完（题目可能分散在不同页），不可跳页
+- Lecture slide 前 10 页 + 最后 2 页通常足以提取 topic 列表和 learning objectives
+
+---
+
 ## Phase 0 标准扫描流程
 
 ```
@@ -105,7 +123,7 @@ UK 商学院的资料文件名极其混乱。同一份 module handbook 可能叫
 | `topics.md` | Daily | Cram | `Week`, `Topic`, `Lecture file`, `Tutorial`, `Status` |
 | `glossary.md` | Daily | Cram | `English Term`, `中文理解`, `First seen`, `关键句` |
 | `progress.md` | Daily | Cram | `Week`, checkbox items, `Sticky points` |
-| `hotmap.md` | Cram | Cram | `Rank`, `Topic`, `Lecture`, `出现次数`, `主要题型`, `累计分值占比` |
+| `hotmap.md` | Cram | Cram | `Rank`, `Topic`, `Lecture`, `出现次数`, `主要题型`, `累计分值占比`, `热度(🔴🟠🟡🟢)` |
 | `answer-templates.md` | Cram | Cram | 按题型分段的填空式模板 |
 | `cheatsheet.md` | Cram | Cram | Markdown 表格，每行一个 Top topic |
 
