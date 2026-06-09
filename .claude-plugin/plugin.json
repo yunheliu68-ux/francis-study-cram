@@ -1,0 +1,9 @@
+{
+  "name": "francis-study-cram",
+  "version": "0.1.0",
+  "description": "UK Business School 学习助教（日常 + 抱佛脚双模式）",
+  "author": {
+    "name": "Francis Liu"
+  },
+  "license": "MIT"
+}

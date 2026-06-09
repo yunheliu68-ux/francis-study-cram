@@ -1,0 +1,14 @@
+# macOS
+.DS_Store
+
+# 用户在 module 文件夹里跑 skill 生成的本地学习档案（不应该进 repo）
+.study/
+
+# 编辑器
+.vscode/
+.idea/
+*.swp
+
+# 临时
+*.tmp
+*.log

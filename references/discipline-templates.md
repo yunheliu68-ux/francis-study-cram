@@ -1,0 +1,162 @@
+# 四类商科子模板（学科自动识别 + 输出格式）
+
+UK 商学院模块虽然都挂在 Business School 下，但**答题套路完全不同**。Skill 必须自动识别学科类型，套用对应模板。
+
+---
+
+## 学科自动识别（关键词驱动）
+
+| 信号词 | 判定 |
+|---|---|
+| `supply / demand / equilibrium / GDP / inflation / growth model / IS-LM` | **Econ** |
+| `claimant / defendant / statute / case law / tort / contract / employment law / discrimination` | **Law-flavoured** |
+| `motivation / leadership / performance / appraisal / HRM / equity theory / JCM` | **Management** |
+| `regression / SPSS / p-value / significance / forecasting / inventory / queuing / optimisation` | **Quant** |
+
+**判定流程：** 扫 lecture slide 前 10 页 + module handbook，统计哪类词频最高 → 该模块归入该子类。同一模块允许两个子类（如 Econ + Quant）。
+
+---
+
+## Econ 模板（适用：ECO212 Development Economics 等）
+
+**答题三件套：模型 + 图 + 直觉**
+
+### 答 Essay 题结构
+
+```
+1. Define the concept（一句话，用 textbook definition）
+2. Present the model
+   - 写出关键 equation / framework（如 Solow growth model: Y = K^α(AL)^(1-α)）
+   - 画图（必须！没图扣分。用文字描述图：横轴/纵轴/曲线/均衡点）
+3. Explain the intuition
+   - 用直觉语言讲为什么模型这么走
+4. Apply to context
+   - 举一个 lecture 提过的 case（如 China's growth, Sub-Saharan Africa poverty）
+5. Critically evaluate
+   - 模型的 assumption 是什么？
+   - 哪些 assumption 不现实？
+   - 有什么替代理论？（如 Solow vs Endogenous Growth）
+6. Conclusion: which view is more persuasive and why
+```
+
+### 关键红线
+
+- ❌ 没画图（哪怕用文字描述也要画）→ 直接扣 critical analysis 分
+- ❌ 只讲一个理论不讲对立面 → 没有 critique
+- ❌ 用 "I think the economy will grow" 之类的口语 → 必须 hedge："empirical evidence suggests..."
+- ❌ 把 model 当成 fact → 永远说 "the Solow model predicts..."，不要说 "growth IS..."
+
+---
+
+## Law-flavoured 模板（适用：SMO207 Business Law / Employment Law 等）
+
+**答题框架：IRAC-lite**（简化的法学经典框架）
+
+### 答 Case Study 题结构
+
+```
+I — Issue（问题识别）
+   - 这个 case 的核心法律问题是什么？
+   - 涉及哪一类法律（contract / tort / employment）？
+
+R — Rule（规则陈述）
+   - 适用的法律原则是什么？
+   - 引用具体的 statute（如 Employment Rights Act 1996 s.94）
+   - 或先例 case（如 Donoghue v Stevenson [1932]）
+
+A — Application（应用到本案）
+   - 把规则套用到 case 事实上
+   - 这里是答题主体（占 50% 篇幅）
+   - 必须 reason，不能跳步
+
+C — Conclusion（结论）
+   - 谁赢？为什么？
+   - 哪个 remedy？damages / injunction / unfair dismissal claim?
+```
+
+### 关键红线
+
+- ❌ 跳过 Issue 直接答案 → marker 找不到你的 reasoning
+- ❌ 引 statute 不写年份和 section → 不算 citation
+- ❌ 引 case 不写 [年份] → 同上
+- ❌ "I would rule that..." → 不许第一人称，用 "It can be argued that..."
+- ❌ 应用部分不分析事实 → 这是核心扣分点
+
+---
+
+## Management 模板（适用：SMO202 HR / Performance Management / Leadership 等）
+
+**答题三件套：Framework + Critique + Case**
+
+### 答 Essay 题结构
+
+```
+1. Identify the relevant framework / theory
+   - 必须说出名字 + 出处 + 年份
+   - 例："The Job Characteristics Model (Hackman & Oldham, 1976)..."
+   - 例："Equity Theory (Adams, 1963) suggests that..."
+
+2. Explain the framework
+   - Core components / dimensions
+   - 如何应用到 HR / management 情境
+
+3. Critically evaluate
+   - 提至少 1 个支持的 empirical study
+   - 提至少 1 个 critique（例 "However, Smith (2010) argues..."）
+   - 讨论 boundary conditions（在什么情境下成立）
+
+4. Apply to a real case
+   - lecture 提过的公司案例（Google, Netflix, etc.）
+   - 或自己合理推断的情境
+
+5. Synthesis & Conclusion
+   - 不要简单选边
+   - "While X is useful in Y context, it has limitations in Z"
+```
+
+### 关键红线
+
+- ❌ 用 framework 不报名字 → 完全不得分
+- ❌ 报名字不报年份/作者 → 扣 citation 分
+- ❌ 只讲框架不批判 → 永远拿不到 1st
+- ❌ "I think performance management is good" → 必须有理论支撑
+
+---
+
+## Quant 模板（适用：IOM208 Operations + SPSS / Forecasting / 量化分析等）
+
+**答题四件套：Given + Method + Result + Interpretation**
+
+### 答数据 / 计算题结构
+
+```
+1. Given / Data
+   - 列出已知数据
+   - 说明数据类型（time series / cross-sectional）
+
+2. Method
+   - 说明用什么模型/方法（regression, ARIMA, EOQ, etc.）
+   - 为什么选这个方法（assumption check）
+   - 写出公式
+
+3. Calculation / SPSS Output
+   - 完整 working steps
+   - 单位必须写
+   - 如果是 SPSS：贴关键 output（coefficients table, R², p-value, F-stat）
+
+4. Interpretation（核心扣分点）
+   - 数字背后的 business meaning 是什么
+   - p < 0.05 → "the relationship is statistically significant at 5% level"
+   - 不要只说 "X affects Y"，要说 "a 1-unit increase in X is associated with β-unit change in Y"
+
+5. Managerial implication
+   - 这个结果对决策有什么影响
+```
+
+### 关键红线
+
+- ❌ 算完没单位 → 扣分
+- ❌ 只贴 SPSS 截图不解读 → 没有 interpretation 分
+- ❌ 把 correlation 说成 causation
+- ❌ p-value 反着读（p < 0.05 不是 "95% chance the effect is real"）
+- ❌ 没有 managerial implication → 商科 quant 必须落回 business 语境

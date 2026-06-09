@@ -1,0 +1,16 @@
+{
+  "name": "francis-study-cram",
+  "owner": {
+    "name": "Francis Liu",
+    "url": "https://github.com/yourname/francis-study-cram"
+  },
+  "plugins": [
+    {
+      "name": "francis-study-cram",
+      "source": ".",
+      "description": "UK 本硕 Business School 学习助教：日常学习 + 考前冲刺双模式，专为 Economics / Business Law / Management / Quant Operations 四类模块设计，自动按内容识别 lecture / tutorial / past paper / revision lecture，输出贴合英文考试的双语解析。",
+      "version": "0.1.0",
+      "category": "education"
+    }
+  ]
+}
